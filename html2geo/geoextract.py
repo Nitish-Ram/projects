@@ -8,7 +8,7 @@ html = sys.stdin.read()
 pattern = r'(-?\d{1,2}\.\d+)\s*,\s*(-?\d{1,3}\.\d+)'
 matches = re.findall(pattern, html)
 
-valid_coords = [(float(lat), float(lon)) for lat, lon in matches if -90<=float(lat)<=90 and -180<=float(lon)<=180]
+valid_coords = [(float(lat), float(long)) for lat, long in matches if -90<=float(lat)<=90 and -180<=float(long)<=180]
 if not valid_coords:
     print("coords lowk trippin")
     sys.exit(1)
